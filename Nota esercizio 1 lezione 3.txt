@@ -1,0 +1,1 @@
+Nota: ho inserito 6 pc a cui ho associato ad ognuno un IPV4 unico e un Gateway identico per tutti, ho inserito poi due swich che si collegano tra loro e rispettivamente a tre pc per uno. In questo modo tutti i pc saranno collegati tra loro e raggiungibili da ping
