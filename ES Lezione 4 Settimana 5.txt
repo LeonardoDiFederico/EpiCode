@@ -1,0 +1,13 @@
+Nell'esercizio di oggi ho effettuato una scansione dell'IP di metasploit, utilizzando nessus su kali linux, in questo modo ho generato un report che evidenzia e classifica tutte le varie vulnerabilità riscontrate. Allego il file del report completo e approfondisco 3 delle vulnerabilità riscontarte.
+
+1° VNC Server 'password' Password (CRITICAL)
+-Il VNC (Virtual Network Computing) è un sistema comune di accesso remoto       ampiamente utilizzato per l’assistenza tecnica, il monitoraggio delle apparecchiature, l’apprendimento a distanza e altri scopi. I bug sono legati a un uso errato della memoria. Il loro sfruttamento porta a malfunzionamenti e attacchi DDoS. Nei casi più gravi, i cybercriminali possono ottenere un accesso non autorizzato alle informazioni sul dispositivo o rilasciare malware nel sistema della vittima.
+-Uno dei modi piu sicuri per evitare rischi è proteggere il servizio VNC con una password complessa e di non connettersi mai a server VNC non affidabili.
+
+2° Bind Shell Backdoor Detection (CRITICAL)
+- In questo caso si evidenzia una fragilità nella sicurezza della backdoor dell'host in questione. Tramite attacco malware l'hacker può connettersi da remoto prendendo il controllo completo del sistema sotto attacco, in maniera passiva e mettendosi in ascolto. 
+- Verificare sempre lo stato dell'host in ascolto, in caso si riscontrino anomalie reinstallate il sistema.
+
+3° Unencrypted Telnet Server (MEDIUM)
+- Telnet è un protocollo di emulazione terminale utilizzato su Internet e reti basate su protocolli TCP/IP. Ciò consente a un utente terminale o di un personal computer di accedere a un computer remoto ed eseguire programmi. In questo caso il canale utilizzato non è crittografato, trasferendo le varie credenziali utilizzate in chiaro. Molto pericoloso in caso di intercetto di sessione.
+-Si consiglia di disattivare il servizio Telnet e utilizzare SSH, che è crittografato appunto.
