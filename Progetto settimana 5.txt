@@ -1,0 +1,16 @@
+Nell'esercizio di oggi ho effettuato una scansione dell'IP di metasploit, utilizzando nessus su kali linux, in questo modo ho generato un report che evidenzia e classifica tutte le varie vulnerabilità riscontrate. Allego il file del report completo e approfondisco 3 delle vulnerabilità riscontarte.
+
+1° VNC Server 'password' Password (CRITICAL)
+-Il VNC (Virtual Network Computing) è un sistema comune di accesso remoto       ampiamente utilizzato per l’assistenza tecnica, il monitoraggio delle apparecchiature, l’apprendimento a distanza e altri scopi. I bug sono legati a un uso errato della memoria. Il loro sfruttamento porta a malfunzionamenti e attacchi DDoS. Nei casi più gravi, i cybercriminali possono ottenere un accesso non autorizzato alle informazioni sul dispositivo o rilasciare malware nel sistema della vittima.
+-In questo caso per ridurre il rischio, la scelta migliore è stata quella di modificare la password del server VNC di metasploit, rendendola piu solida. Avviando la macchina abbiamo eseguito, con root, il comando "root@yourpc: vncpassword", seguendo poi le indicazioni abbiamo modificato la password, salvato, e riavviato la macchina in fine.
+
+2° rexecd Service Detection (CRITICAL)
+- Il servizio rexecd è progettato per consentire agli utenti di una rete di eseguire comandi in remoto.
+Questo servizio non avendo un buon mezzo di autenticazione è piu esposto ad attacchi da parte di host di terze parti, che potrebbero effettuare scansioni.
+-Per ridurre il rischio, ho avviato la macchina e eseguito, con root, il comando "sudo /etc/inetd.conf". Poi con "#" ho commnetato la riga riguardante 'exec', disabilitando momentaneamente questo servizio.
+
+3° rlogin Service Detection (MEDIUM)
+-Il servizio Rlogin usa una connessione TCP singola tra client e server.  I dati trasmessi da questo servizio sono in chiaro, questo lo rende vulnerabile a possibili attacchi.
+- Per ridurre il rischio, ho avviato la macchina e eseguito, con root, il comando "sudo /etc/inetd.conf". Poi con "#" ho commnetato la riga riguardante 'login', disabilitando momentaneamente questo servizio.
+
+Come possiamo notare nel report effettuato dopo le correzzioni le tre vulnerabilità sono state risolte e passete in (INFO).
